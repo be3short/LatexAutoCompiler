@@ -1,0 +1,48 @@
+== Latex Auto PDF Compiler
+
+This program re-compiles a latex project into a pdf every time that a file within the 
+base project directory is modified.  The directory that this script is located in
+must be the base project directory, meaining this directory contains all the files 
+(they can be in sub-directories) that are to be monitored for updates.  The main tex
+file name needs to be supplied as an imput without the extension (ie .tex or .log) 
+and the path needs to be supplied as well if this main tex file is in a subdirectory
+(not directly located in the base directory).  Once this script is run, every time a 
+file is modified, the project will recompile.  For questions or comments feel free to
+email brendan.e.short@gmail.com. Enjoy!
+
+== Usage
+
+The script "texAutoPdfCompiler.sh" must be placed in a base directory where all project
+files are either in the base directory, or in sub-directories within the base 
+directory.  The script is run by opening a command line window calling "./texAutoPdfCompiler.sh" with the name of the main Tex file, without the extension(.tex), 
+as the first argument.  If your main tex file was named "mainTex.tex", and it was 
+located in the base directory, you would run the compiler by calling 
+"./texAutoPdfCompiler.sh mainTex".  If your mainTex file was in a subdirectory called "main", you would call "./texAutoPdfCompiler.sh mainTex main/". To stop the script 
+either close the command line window where the script is running, or enter Control+C.
+
+IF THE COMPILE FAILS THE PDF WILL NOT BE UPDATED UNTIL YOU FIX THE PROBLEM.  If 
+it seems like the auto compiler has stopped working, try to manually build the project
+to check for errors. The auto compiler will still be running while you are fixing the
+errors, so you don’t need to hit build (unless you want to for troubleshooting) as the 
+project will be compiled once the errors are resolved.  If there are no errors, try 
+restarting the auto compiler, and if that doesn’t work you can send me an email with 
+the terminal log if you want so that I can debug it.
+
+
+== Examples
+
+>> Example 1 : All files in base directory
+
+Run command "./texAutoPdfCompiler.sh root"
+
+
+>> Example 2 : Main tex file in sub-directory
+
+Run command "./texAutoPdfCompiler.sh root mainTex/"
+
+== Maintenance Info
+
+Author: Brendan Short
+Version: 1.0
+Updated: 2/4/2017
+
